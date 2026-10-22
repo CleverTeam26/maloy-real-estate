@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maloy Real Estate | Omaha Property Management &amp; Homes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Omaha property management and real estate with broker Shawn Maloy. 24 years licensed, 293 homes sold. Get a free rental analysis, see available rentals, or find out what your home is worth.">
+<link rel="icon" type="image/png" href="maloy-mark-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Maloy Real Estate",
+  "employee": {"@type": "Person", "name": "Shawn Maloy", "jobTitle": "Broker"},
+  "telephone": "+1-402-306-2569",
+  "email": "maloyre@gmail.com",
+  "url": "https://www.maloyre.com/",
+  "logo": "https://www.maloyre.com/maloy-logo-transparent.png",
+  "address": {"@type": "PostalAddress", "streetAddress": "4303 N 142nd St", "addressLocality": "Omaha", "addressRegion": "NE", "postalCode": "68164", "addressCountry": "US"},
+  "areaServed": ["Omaha, NE", "Bellevue, NE", "Lincoln, NE"],
+  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00"}],
+  "knowsAbout": ["Property management", "Residential real estate", "Rental homes"]
+}
+</script>
+<style>
+/* Layout: owner-first single page. Deep-green hero with the lead form beside the promise,
+   then proof, management offer, rentals, sales, the broker, areas, contact. Light theme only, by choice:
+   the logo is built for a light ground. */
+:root{
+  --surface:#FFFFFB; --surface-alt:#F3F5F0; --surface-raised:#FFFFFF;
+  --ink:#181D20; --ink-muted:#4B5552; --line:#DDE2DA; --line-strong:#8A948F;
+  --green:#007C3F; --green-strong:#00602F; --green-deep:#0E3B26; --green-tint:#E3F1E8;
+  --on-green:#FFFFFF; --on-deep:#F1F3EE; --on-deep-muted:#B9CCC1;
+  --orange:#F86110; --orange-strong:#C9470A; --orange-tint:#FEEFE5; --on-orange:#181D20; --orange-on-deep:#F9A77A;
+  --focus:#F86110; --success:#1F6E43; --danger:#B42318;
+  --font-display:"Montserrat","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Source Sans 3","Source Sans Pro","Segoe UI",system-ui,sans-serif;
+  --r-sm:2px; --r-md:4px; --r-lg:8px;
+  --shadow-card:0 1px 2px rgba(24,29,32,.06),0 4px 12px rgba(24,29,32,.06);
+  --shadow-panel:0 10px 30px rgba(6,26,17,.28);
+  --shadow-sticky:0 -2px 12px rgba(24,29,32,.12);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--surface);color:var(--ink);font:400 17px/27px var(--font-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--green-strong)}
+h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance;color:inherit}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 13px/16px var(--font-display);letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.h2{font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:700}
+.lede{font-size:19px;line-height:30px;color:var(--ink-muted);max-width:60ch}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/20px var(--font-display);letter-spacing:.02em;padding:14px 22px;border-radius:var(--r-md);border:2px solid transparent;text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s}
+.btn-cta{background:var(--orange);color:var(--on-orange)}
+.btn-cta:hover{background:var(--orange-strong);color:#fff}
+.btn-green{background:var(--green);color:var(--on-green)}
+.btn-green:hover{background:var(--green-strong)}
+.btn-line{background:transparent;color:var(--green-strong);border-color:var(--green)}
+.btn-line:hover{background:var(--green-tint)}
+.btn-block{width:100%}
+.link-arrow{font:600 16px/22px var(--font-display);text-decoration:none;color:var(--green-strong);display:inline-flex;gap:6px}
+.link-arrow:hover{text-decoration:underline}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--surface);z-index:60}
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,251,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:44px;height:auto}
+.brand .wm{display:grid;line-height:1}
+.brand .wm b{font:800 21px/1 var(--font-display);letter-spacing:.01em}
+.brand .wm span{font:600 9.5px/1 var(--font-display);letter-spacing:.24em;margin-top:4px}
+.nav{display:none;gap:26px}
+.nav a{font:600 15px/1 var(--font-display);color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--orange)}
+.head-actions{display:flex;align-items:center;gap:16px}
+.head-phone{display:none;font:700 16px/1 var(--font-display);color:var(--green-strong);text-decoration:none;font-variant-numeric:tabular-nums}
+.head-actions .btn{padding:11px 16px;font-size:15px}
+@media(min-width:980px){.nav{display:flex}.head-phone{display:inline}}
+@media(max-width:560px){.head-actions .btn{display:none}}
+
+/* hero */
+.hero{background:linear-gradient(90deg,rgba(14,59,38,.97) 0%,rgba(14,59,38,.93) 45%,rgba(14,59,38,.82) 100%),url("images/sold-4201-n-branch-dr.jpg") center 40%/cover no-repeat,var(--green-deep);color:var(--on-deep);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-40px;width:560px;height:560px;opacity:.07;pointer-events:none;
+  background:repeating-linear-gradient(135deg,transparent 0 34px,var(--on-deep) 34px 42px),repeating-linear-gradient(45deg,transparent 0 34px,var(--on-deep) 34px 42px);
+  clip-path:polygon(50% 0,100% 40%,100% 100%,0 100%,0 40%)}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:40px;padding-block:56px 64px}
+@media(min-width:960px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;padding-block:88px 96px}}
+.hero .eyebrow{color:var(--orange-on-deep)}
+.hero h1{font-size:clamp(36px,5.6vw,58px);line-height:1.05;font-weight:800;letter-spacing:-.015em;margin-top:14px;max-width:16ch}
+.hero .sub{font-size:19px;line-height:30px;color:var(--on-deep);opacity:.92;margin-top:20px;max-width:52ch}
+.hero-alt{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px}
+.hero-alt a{color:var(--on-deep);font:600 15px/22px var(--font-display);text-decoration:none;border-bottom:1px solid rgba(241,243,238,.4);padding-bottom:2px}
+.hero-alt a:hover{border-bottom-color:var(--orange-on-deep)}
+.panel{background:var(--surface-raised);color:var(--ink);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-panel);display:grid;gap:18px}
+.panel h2{font-size:24px;line-height:30px;font-weight:700}
+.panel .note{font-size:14px;line-height:20px;color:var(--ink-muted)}
+
+/* forms */
+.field{display:grid;gap:6px}
+.field label{font:600 14px/18px var(--font-display);color:var(--ink)}
+.field label small{font-weight:600;color:var(--ink-muted);font-family:var(--font-body);font-size:14px}
+.field input,.field select,.field textarea{font:400 17px/24px var(--font-body);color:var(--ink);background:var(--surface-raised);border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:11px 12px;width:100%}
+.field textarea{min-height:96px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--focus);outline-offset:1px;border-color:var(--ink)}
+.form{display:grid;gap:14px}
+.hp{position:absolute;left:-9999px}
+.success{display:grid;gap:8px;padding:18px;border-radius:var(--r-md);background:var(--green-tint);color:var(--ink)}
+.success b{font:700 18px/24px var(--font-display);color:var(--success)}
+
+/* proof */
+.proof{background:var(--surface-alt);border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding-block:32px}
+@media(min-width:820px){.proof .wrap{grid-template-columns:repeat(4,1fr)}}
+.stat{display:grid;gap:4px}
+.stat b{font:800 clamp(23px,3.2vw,38px)/1 var(--font-display);color:var(--green-strong);font-variant-numeric:tabular-nums}
+.stat span{font-size:15px;line-height:20px;color:var(--ink-muted)}
+
+/* sections */
+.sec{padding-block:72px}
+@media(min-width:960px){.sec{padding-block:96px}}
+.sec-alt{background:var(--surface-alt)}
+.sec-head{display:grid;gap:12px;margin-bottom:40px;max-width:720px}
+.sec-head.row{max-width:none;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.sec-head.row > div{display:grid;gap:12px;max-width:640px}
+
+/* management */
+.pm{display:grid;gap:48px}
+@media(min-width:960px){.pm{grid-template-columns:1fr 1fr;gap:64px}}
+.services{display:grid;gap:0;border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:40px 1fr;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
+.svc svg{width:32px;height:32px;stroke:var(--green);fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:19px;line-height:26px;font-weight:700}
+.svc p{color:var(--ink-muted);margin-top:4px}
+.steps{display:grid;gap:16px;counter-reset:s}
+.step{background:var(--surface-raised);border:1px solid var(--line);border-radius:var(--r-md);padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.step::before{counter-increment:s;content:counter(s);font:800 22px/1 var(--font-display);color:var(--on-green);background:var(--green);width:40px;height:40px;display:grid;place-items:center;border-radius:var(--r-sm)}
+.step h3{font-size:18px;line-height:24px;font-weight:700}
+.step p{color:var(--ink-muted);margin-top:4px;font-size:16px;line-height:25px}
+.pm-cta{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* listing cards */
+.grid3{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:700px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.grid3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--surface-raised);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s}
+.card:hover{box-shadow:var(--shadow-card)}
+.photo{aspect-ratio:3/2;max-width:100%;position:relative;background:linear-gradient(160deg,var(--green-tint),#D3E7DA);display:grid;place-items:center;overflow:hidden}
+.photo img.mark{width:72px;opacity:.35}
+.photo img.pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .badge{z-index:1}
+.photo .zip{position:absolute;right:12px;bottom:10px;font:700 12px/1 var(--font-display);letter-spacing:.1em;color:var(--green-strong);opacity:.75}
+.badge{position:absolute;left:12px;top:12px;font:700 12px/1 var(--font-display);letter-spacing:.08em;text-transform:uppercase;padding:7px 9px;border-radius:var(--r-sm);background:var(--surface-raised);color:var(--green-strong)}
+.badge.sold{background:var(--ink);color:#fff}
+.card .body{padding:20px 22px 22px;display:grid;gap:6px;flex:1;align-content:start}
+.price{font:700 30px/34px var(--font-display);font-variant-numeric:tabular-nums}
+.price small{font-size:17px;font-weight:600;color:var(--ink-muted)}
+.addr{font:700 18px/24px var(--font-display)}
+.facts{font-size:15px;line-height:22px;color:var(--ink-muted);font-variant-numeric:tabular-nums}
+.card .actions{padding:0 22px 22px;display:flex;gap:10px;flex-wrap:wrap}
+.card .actions .btn{flex:1;padding:12px 14px;font-size:15px}
+
+/* sold */
+.sold-layout{display:grid;gap:32px}
+@media(min-width:960px){.sold-layout{grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}}
+.highlight{background:var(--green-deep);color:var(--on-deep);border-radius:var(--r-lg);padding:32px;display:grid;gap:14px}
+.highlight .eyebrow{color:var(--orange-on-deep)}
+.hl-pic{width:calc(100% + 64px);height:auto;max-width:none;margin:-32px -32px 6px;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.highlight .big{font:800 clamp(40px,5vw,56px)/1 var(--font-display)}
+.highlight p{color:var(--on-deep);opacity:.9}
+.highlight ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px;border-top:1px solid rgba(241,243,238,.18);padding-top:16px;font-size:15px;line-height:22px}
+.highlight li b{font-family:var(--font-display)}
+.sold-list{border-top:1px solid var(--line)}
+.sold-row{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding-block:16px;border-bottom:1px solid var(--line)}
+.sold-row .addr{font-size:17px}
+.sold-row .p{font:700 20px/24px var(--font-display);text-align:right;font-variant-numeric:tabular-nums}
+.sold-row .facts{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 14px}
+.side{font:700 11px/1 var(--font-display);letter-spacing:.08em;text-transform:uppercase;padding:5px 7px;border-radius:var(--r-sm);background:var(--green-tint);color:var(--green-strong)}
+.side.seller{background:var(--orange-tint);color:var(--orange-strong)}
+
+/* about */
+.about{display:grid;gap:40px}
+@media(min-width:960px){.about{grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}}
+.about-copy{display:grid;gap:18px}
+.about-copy p{max-width:60ch}
+.facts-list{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px}
+.facts-list div{display:grid;grid-template-columns:150px 1fr;gap:12px;padding-block:12px;border-bottom:1px solid var(--line);font-size:16px;line-height:24px}
+.facts-list dt{font:600 14px/24px var(--font-display);color:var(--ink-muted)}
+.facts-list dd{margin:0;font-variant-numeric:tabular-nums}
+.quotes{display:grid;gap:16px}
+.quote{background:var(--surface-raised);border:1px solid var(--line);border-radius:var(--r-md);padding:26px}
+.quote p{font:700 22px/30px var(--font-display);color:var(--ink)}
+.quote p::before{content:"\201C";color:var(--orange)}
+.quote p::after{content:"\201D";color:var(--orange)}
+.quote cite{display:block;margin-top:12px;font-style:normal;font-size:15px;color:var(--ink-muted)}
+
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:10px}
+.area{border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:10px 14px;font:600 15px/20px var(--font-display);background:var(--surface-raised)}
+.area span{font-family:var(--font-body);font-weight:400;color:var(--ink-muted);margin-left:6px;font-variant-numeric:tabular-nums}
+
+/* contact */
+.contact{display:grid;gap:40px}
+@media(min-width:960px){.contact{grid-template-columns:.9fr 1.1fr;gap:64px}}
+.contact-info{display:grid;gap:22px;align-content:start}
+.ci{display:grid;gap:2px}
+.ci span{font:600 13px/16px var(--font-display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted)}
+.ci a,.ci p{font:700 20px/28px var(--font-display);color:var(--ink);text-decoration:none;font-variant-numeric:tabular-nums}
+.ci a:hover{color:var(--green-strong)}
+.contact .panel{box-shadow:none;border:1px solid var(--line)}
+.two-col{display:grid;gap:14px}
+@media(min-width:600px){.two-col{grid-template-columns:1fr 1fr}}
+
+/* closing band */
+.band{background:var(--green-deep);color:var(--on-deep)}
+.band .wrap{padding-block:64px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.band h2{font-size:clamp(26px,3.6vw,36px);line-height:1.15;font-weight:800;max-width:22ch}
+.band p{color:var(--on-deep-muted);margin-top:8px}
+.band .acts{display:flex;flex-wrap:wrap;gap:12px}
+.band .btn-ghost{color:var(--on-deep);border-color:rgba(241,243,238,.5)}
+.band .btn-ghost:hover{border-color:var(--on-deep)}
+
+/* footer */
+footer{background:#0A2A1B;color:var(--on-deep-muted);font-size:15px;line-height:24px}
+footer .wrap{padding-block:48px 32px;display:grid;gap:32px}
+.foot-grid{display:grid;gap:28px}
+@media(min-width:820px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr 1fr}}
+.foot-brand{display:flex;gap:12px;align-items:center;color:var(--on-deep)}
+.foot-brand img{width:48px}
+.foot-brand b{font:800 20px/1 var(--font-display);display:block}
+.foot-brand span{font:600 9.5px/1 var(--font-display);letter-spacing:.24em;display:block;margin-top:4px}
+footer h3{font:600 13px/16px var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep);margin-bottom:10px}
+footer a{color:var(--on-deep);text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.legal{border-top:1px solid rgba(241,243,238,.14);padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:13px;line-height:20px}
+.eho{display:inline-flex;align-items:center;gap:6px}
+.eho svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6}
+
+/* sticky mobile bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--surface-raised);box-shadow:var(--shadow-sticky);display:grid;grid-template-columns:1fr 1.4fr;gap:10px;
+  padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.mbar .btn{padding:13px 10px;font-size:15px}
+@media(min-width:820px){.mbar{display:none}}
+@media(max-width:819px){body{padding-bottom:76px}}
+
+/* ---------- motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero .eyebrow,.hero h1,.hero .sub,.hero-alt,.hero .panel{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}
+.hero .sub{animation-delay:.18s}
+.hero-alt{animation-delay:.26s}
+.hero .panel{animation-delay:.36s}
+
+/* rental card hover: lift + photo zoom */
+.card{transition:box-shadow .25s ease,transform .25s ease}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.photo img.pic{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .photo img.pic{transform:scale(1.04)}
+
+/* form feedback */
+@keyframes shake{10%,90%{transform:translateX(-1px)}20%,80%{transform:translateX(2px)}30%,50%,70%{transform:translateX(-4px)}40%,60%{transform:translateX(4px)}}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--danger);animation:shake .4s}
+.field .err{color:var(--danger);font-size:14px;line-height:18px;margin:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn .spin{width:18px;height:18px;border:2.5px solid currentColor;border-right-color:transparent;border-radius:50%;display:inline-block;animation:spin .7s linear infinite}
+.btn.loading{pointer-events:none;opacity:.92}
+.success{animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+.check{width:44px;height:44px}
+.check circle{fill:none;stroke:var(--success);stroke-width:2.5;stroke-dasharray:126;stroke-dashoffset:126;animation:draw .6s .1s ease-out forwards}
+.check path{fill:none;stroke:var(--success);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:draw .35s .6s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* highlight the form a CTA scrolled to */
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(248,97,16,.6)}100%{box-shadow:0 0 0 16px rgba(248,97,16,0)}}
+.panel.pulse{animation:ring .9s ease-out 2}
+
+/* mobile call bar slides in after the hero */
+.mbar{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.js .mbar.off{transform:translateY(115%)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .check circle,.check path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Maloy Real Estate home">
+      <img src="maloy-mark-transparent.png" alt="" width="44" height="42">
+      <span class="wm"><b>MALOY</b><span>REAL ESTATE</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#management">Property Management</a>
+      <a href="#rentals">Rentals</a>
+      <a href="#sold">Sell</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <a class="head-phone" href="tel:+14023062569">(402) 306-2569</a>
+      <a class="btn btn-cta" href="#analysis" data-focus="a-address">Free rental analysis</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Omaha property management &amp; real estate</div>
+        <h1 id="hero-title">Rent it out, sell it, or find your next home with Omaha's straight-talking broker.</h1>
+        <p class="sub">Shawn Maloy has been a licensed Nebraska broker for 24 years and has closed 293 home sales. Work with him directly, from the first call to the last signature.</p>
+        <div class="hero-alt">
+          <a href="#rentals">Looking to rent? See available homes</a>
+          <a href="#sold">Selling? Get your home's value</a>
+        </div>
+      </div>
+
+      <div class="panel" id="analysis">
+        <div>
+          <h2>What will your home rent for?</h2>
+          <p class="note" style="margin-top:6px">Get a free rental analysis for your Omaha property, prepared by Shawn himself.</p>
+        </div>
+        <form class="form" id="analysis-form" novalidate>
+          <div class="field"><label for="a-address">Property address</label><input id="a-address" name="address" autocomplete="street-address" placeholder="e.g. 4255 N 165th St, Omaha" required></div>
+          <div class="field"><label for="a-name">Your name</label><input id="a-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="a-contact">Phone or email</label><input id="a-contact" name="contact" autocomplete="email" required></div>
+          <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-cta btn-block" type="submit">Get my free rental analysis</button>
+          <p class="note">No obligation. Shawn replies personally, Monday to Friday, 9 AM to 5 PM.</p>
+        </form>
+        <div class="success" id="analysis-ok" hidden role="status"><svg class="check" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20"/><path d="M13 22.5l6 6 12-13"/></svg><b>Thanks, your request is in.</b><p>Shawn will review your property and reach out with a rental estimate. Need him sooner? Call (402) 306-2569.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Track record">
+    <div class="wrap">
+      <div class="stat"><b>24</b><span>Years as a licensed broker</span></div>
+      <div class="stat"><b>293</b><span>Homes sold</span></div>
+      <div class="stat"><b>$308K</b><span>Average sale price</span></div>
+      <div class="stat"><b>$215K–$400K</b><span>Recent sale price range</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="management" aria-labelledby="pm-title">
+    <div class="wrap pm">
+      <div>
+        <div class="sec-head" style="margin-bottom:28px">
+          <div class="eyebrow">Property management</div>
+          <h2 class="h2" id="pm-title">Your rental, handled by someone who knows Omaha</h2>
+          <p class="lede">Whether it's your first rental or a house you've inherited, Shawn takes care of the details so it earns without taking over your week.</p>
+        </div>
+        <div class="services">
+          <div class="svc">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 26h22M8 26V14l8-6 8 6v12"/><path d="M13 26v-6h6v6"/></svg>
+            <div><h3>Pricing your rent right</h3><p>A rent price based on what similar homes in your ZIP code are leasing for, so the home doesn't sit empty.</p></div>
+          </div>
+          <div class="svc">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/></svg>
+            <div><h3>Marketing and tenant screening</h3><p>Your home listed where Omaha renters search, showings arranged, and applicants checked before anyone signs.</p></div>
+          </div>
+          <div class="svc">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 9h20v16H6z"/><path d="M6 14h20M11 19h4"/></svg>
+            <div><h3>Rent and repairs taken care of</h3><p>Rent collected and maintenance requests handled, with you kept informed on anything that matters.</p></div>
+          </div>
+          <div class="svc">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 5h5l2 6-3 2a14 14 0 0 0 7 7l2-3 6 2v5a2 2 0 0 1-2 2A20 20 0 0 1 6 7a2 2 0 0 1 2-2z"/></svg>
+            <div><h3>A broker you can actually reach</h3><p>No call center. You and your tenants deal with Shawn.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px">How it works</div>
+        <div class="steps">
+          <div class="step"><div><h3>Request your free rental analysis</h3><p>Send your address. Shawn looks at the home and nearby leases, and tells you what it should rent for.</p></div></div>
+          <div class="step"><div><h3>Get it rented</h3><p>Your home is listed, shown and matched with a screened tenant.</p></div></div>
+          <div class="step"><div><h3>Collect the income</h3><p>Shawn manages the tenancy month to month, so you don't have to.</p></div></div>
+        </div>
+        <div class="pm-cta">
+          <a class="btn btn-cta" href="#analysis" data-focus="a-address">Get my free rental analysis</a>
+          <a class="link-arrow" href="tel:+14023062569">Or call (402) 306-2569</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="rentals" aria-labelledby="rentals-title">
+    <div class="wrap">
+      <div class="sec-head row">
+        <div>
+          <div class="eyebrow">Available rentals</div>
+          <h2 class="h2" id="rentals-title">Homes for rent now</h2>
+        </div>
+        <p class="lede" style="max-width:44ch">Like one of these? Request a showing and Shawn will set up a time that works for you.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="photo"><img class="pic" src="images/rental-509-s-50th-ave.jpg" alt="Blue 1.5-story house with a yellow front door and attached garage at 509 S 50th Ave" width="768" height="576" loading="lazy"><span class="badge">For rent</span></div>
+          <div class="body">
+            <div class="price">$1,800<small>/mo</small></div>
+            <div class="addr">509 S 50th Ave</div>
+            <div class="facts">Omaha, NE 68106 · 2 bd · 2 ba · 1,500 sq ft</div>
+          </div>
+          <div class="actions"><a class="btn btn-green" href="#contact" data-interest="rent" data-property="509 S 50th Ave, Omaha, NE 68106">Schedule a showing</a></div>
+        </article>
+        <article class="card">
+          <div class="photo"><img class="pic" src="images/rental-4255-n-165th-st.jpg" alt="Two-story gray house with white trim and a two-car garage at 4255 N 165th St" width="768" height="576" loading="lazy"><span class="badge">For rent</span></div>
+          <div class="body">
+            <div class="price">$2,400<small>/mo</small></div>
+            <div class="addr">4255 N 165th St</div>
+            <div class="facts">Omaha, NE 68116 · 3 bd · 3 ba · 1,880 sq ft</div>
+          </div>
+          <div class="actions"><a class="btn btn-green" href="#contact" data-interest="rent" data-property="4255 N 165th St, Omaha, NE 68116">Schedule a showing</a></div>
+        </article>
+        <article class="card">
+          <div class="photo"><img class="pic" src="images/rental-4922-bancroft-st.jpg" alt="Brick and siding home with stone retaining wall and garden at 4922 Bancroft St" width="768" height="576" loading="lazy"><span class="badge">For rent</span></div>
+          <div class="body">
+            <div class="price">$1,400<small>/mo</small></div>
+            <div class="addr">4922 Bancroft St</div>
+            <div class="facts">Omaha, NE 68106 · 2 bd · 1 ba · 1,200 sq ft</div>
+          </div>
+          <div class="actions"><a class="btn btn-green" href="#contact" data-interest="rent" data-property="4922 Bancroft St, Omaha, NE 68106">Schedule a showing</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="sold" aria-labelledby="sold-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Recently sold</div>
+        <h2 class="h2" id="sold-title">Selling? Here's how recent sales went</h2>
+        <p class="lede">Shawn represents both sellers and buyers across the Omaha metro.</p>
+      </div>
+      <div class="sold-layout">
+        <div class="highlight">
+          <img class="hl-pic" src="images/sold-3614-s-126th-ave.jpg" alt="Split-level house at 3614 S 126th Ave, sold by Shawn in two days" width="768" height="576" loading="lazy">
+          <div class="eyebrow">Seller result</div>
+          <div class="big">2 days</div>
+          <p>3614 S 126th Ave sold in two days, for 2% over the asking price.</p>
+          <ul>
+            <li><b>6607 N 78th Ave</b> · sold in 1 day</li>
+            <li><b>14708 Kansas Ave</b> · sold in 2 days</li>
+          </ul>
+          <a class="btn btn-cta" href="#contact" data-interest="sell" style="justify-self:start;margin-top:8px">What's my home worth?</a>
+        </div>
+        <div class="sold-list">
+          <div class="sold-row"><div class="addr">3614 S 126th Ave, Omaha 68144</div><div class="p">$215,000</div><div class="facts"><span class="side seller">Seller</span><span>3 bd · 2 ba · 1,371 sq ft</span><span>Sold 2026</span></div></div>
+          <div class="sold-row"><div class="addr">4205 N 147th St, Omaha 68116</div><div class="p">$369,000</div><div class="facts"><span class="side">Buyer</span><span>4 bd · 4 ba · 3,138 sq ft</span><span>Sold 2025</span></div></div>
+          <div class="sold-row"><div class="addr">4201 N Branch Dr, Omaha 68116</div><div class="p">$400,200</div><div class="facts"><span class="side seller">Seller</span><span>3 bd · 3 ba · 3,092 sq ft</span><span>Sold 2025</span></div></div>
+          <div class="sold-row"><div class="addr">15219 Madison St, Omaha 68137</div><div class="p">$280,000</div><div class="facts"><span class="side">Buyer</span><span>3 bd · 3 ba · 1,458 sq ft</span><span>Sold 2025</span></div></div>
+          <div class="sold-row"><div class="addr">3102 Lynnwood Dr, Bellevue 68123</div><div class="p">$360,000</div><div class="facts"><span class="side">Buyer</span><span>4 bd · 4 ba · 2,912 sq ft</span><span>Sold 2025</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="about" aria-labelledby="about-title">
+    <div class="wrap about">
+      <div class="about-copy">
+        <div class="eyebrow">Meet your broker</div>
+        <h2 class="h2" id="about-title">Shawn Maloy</h2>
+        <p class="lede">Shawn founded Maloy Real Estate and has spent 24 years helping Omaha families and investors rent out, sell and buy homes. He runs the business from his office on North 142nd Street and handles his clients himself.</p>
+        <dl class="facts-list">
+          <div><dt>License</dt><dd>Nebraska real estate, #20010853</dd></div>
+          <div><dt>Specialties</dt><dd>Property management, residential sales</dd></div>
+          <div><dt>Office</dt><dd>4303 N 142nd St, Omaha, NE 68164</dd></div>
+          <div><dt>Hours</dt><dd>Monday to Friday, 9 AM to 5 PM</dd></div>
+        </dl>
+      </div>
+      <div class="quotes">
+        <figure class="quote" style="margin:0"><p>The most polite manager</p><cite>From a Google review</cite></figure>
+        <figure class="quote" style="margin:0"><p>Shawn's awesome</p><cite>Samantha E., Google review</cite></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="areas" aria-labelledby="areas-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Areas served</div>
+        <h2 class="h2" id="areas-title">Across the Omaha metro</h2>
+      </div>
+      <div class="areas">
+        <div class="area">West Omaha<span>68116</span></div>
+        <div class="area">Northwest Omaha<span>68164</span></div>
+        <div class="area">Southwest Omaha<span>68144 · 68137</span></div>
+        <div class="area">Midtown &amp; Dundee<span>68106</span></div>
+        <div class="area">Bellevue<span>68123</span></div>
+        <div class="area">Lincoln</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact">
+      <div class="contact-info">
+        <div class="sec-head" style="margin-bottom:8px">
+          <div class="eyebrow">Contact</div>
+          <h2 class="h2" id="contact-title">Talk to Shawn</h2>
+          <p class="lede">Questions about a rental, a sale or managing your property? Send a note or call during office hours.</p>
+        </div>
+        <div class="ci"><span>Phone</span><a href="tel:+14023062569">(402) 306-2569</a></div>
+        <div class="ci"><span>Email</span><a href="mailto:maloyre@gmail.com">maloyre@gmail.com</a></div>
+        <div class="ci"><span>Office</span><p>4303 N 142nd St<br>Omaha, NE 68164</p><a class="link-arrow" style="font-size:15px" href="https://www.google.com/maps/search/?api=1&query=4303+N+142nd+St+Omaha+NE+68164" target="_blank" rel="noopener">Get directions</a></div>
+        <div class="ci"><span>Hours</span><p>Mon–Fri, 9 AM–5 PM</p></div>
+      </div>
+      <div class="panel">
+        <form class="form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="c-interest">I'm interested in</label>
+            <select id="c-interest" name="interest">
+              <option value="manage">Property management for my home</option>
+              <option value="rent">Renting one of your homes</option>
+              <option value="sell">Selling my home</option>
+              <option value="buy">Buying a home</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-property">Property address <small>(optional)</small></label><input id="c-property" name="property" autocomplete="street-address"></div>
+          <div class="two-col">
+            <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="c-contact">Phone or email</label><input id="c-contact" name="contact" autocomplete="email" required></div>
+          </div>
+          <div class="field"><label for="c-msg">Message <small>(optional)</small></label><textarea id="c-msg" name="message" placeholder="e.g. Best times for a showing, or anything about your property"></textarea></div>
+          <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-cta btn-block" type="submit">Send to Shawn</button>
+        </form>
+        <div class="success" id="contact-ok" hidden role="status"><svg class="check" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20"/><path d="M13 22.5l6 6 12-13"/></svg><b>Message sent.</b><p>Shawn will get back to you during office hours. For anything urgent, call (402) 306-2569.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Get started">
+    <div class="wrap">
+      <div>
+        <h2>Ready to hand off the landlord work?</h2>
+        <p>Start with a free rental analysis. No obligation.</p>
+      </div>
+      <div class="acts">
+        <a class="btn btn-cta" href="#analysis" data-focus="a-address">Get my free rental analysis</a>
+        <a class="btn btn-line btn-ghost" href="tel:+14023062569">Call (402) 306-2569</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="maloy-mark-transparent.png" alt=""><div><b>MALOY</b><span>REAL ESTATE</span></div></div>
+        <p style="margin-top:14px;max-width:34ch">Property management and residential real estate in Omaha, Nebraska.</p>
+      </div>
+      <div><h3>Contact</h3><ul><li><a href="tel:+14023062569">(402) 306-2569</a></li><li><a href="mailto:maloyre@gmail.com">maloyre@gmail.com</a></li><li>4303 N 142nd St<br>Omaha, NE 68164</li></ul></div>
+      <div><h3>Hours</h3><ul><li>Monday to Friday</li><li>9 AM to 5 PM</li><li>Closed weekends</li></ul></div>
+      <div><h3>Explore</h3><ul><li><a href="#management">Property management</a></li><li><a href="#rentals">Rentals</a></li><li><a href="#sold">Sell your home</a></li><li><a href="#about">About Shawn</a></li></ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Maloy Real Estate. All rights reserved.</span>
+      <span>Shawn Maloy, Nebraska real estate license #20010853</span>
+      <span class="eho"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9l8-6 8 6M4 8v9h12V8"/><path d="M7 11h6M7 14h6"/></svg>Equal Housing Opportunity</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar off" aria-label="Quick contact">
+  <a class="btn btn-green" href="tel:+14023062569">Call Shawn</a>
+  <a class="btn btn-cta" href="#analysis" data-focus="a-address">Free rental analysis</a>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  var reduce=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO='IntersectionObserver' in window;
+
+  // Pulse a form panel after a CTA scrolls to it
+  function pulse(el){ if(!el||reduce) return; el.classList.remove('pulse'); void el.offsetWidth; el.classList.add('pulse'); }
+  function focusLater(id){ setTimeout(function(){var el=document.getElementById(id); if(el) el.focus({preventScroll:true});},450); }
+
+  // Prefill the contact form from "Schedule a showing" / "What's my home worth?"
+  var interest=document.getElementById('c-interest');
+  var property=document.getElementById('c-property');
+  var contactPanel=document.querySelector('#contact .panel');
+  document.querySelectorAll('[data-interest]').forEach(function(a){
+    a.addEventListener('click',function(){
+      interest.value=a.getAttribute('data-interest');
+      if(a.getAttribute('data-property')) property.value=a.getAttribute('data-property');
+      focusLater('c-name'); setTimeout(function(){pulse(contactPanel);},400);
+    });
+  });
+  document.querySelectorAll('[data-focus]').forEach(function(a){
+    a.addEventListener('click',function(){
+      focusLater(a.getAttribute('data-focus')); setTimeout(function(){pulse(document.getElementById('analysis'));},400);
+    });
+  });
+
+  // Count up the track-record numbers the first time they scroll into view
+  function countUp(el){
+    var final=el.textContent, re=/\d+(?:,\d{3})*/g, nums=final.match(re);
+    if(!nums) return;
+    var targets=nums.map(function(n){return +n.replace(/,/g,'');}), t0=null, dur=1100;
+    el.setAttribute('aria-label',final);
+    function frame(t){
+      if(!t0) t0=t;
+      var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3), i=0;
+      el.textContent=final.replace(re,function(){return Math.round(targets[i++]*e).toLocaleString('en-US');});
+      if(p<1) requestAnimationFrame(frame); else el.textContent=final;
+    }
+    requestAnimationFrame(frame);
+  }
+  if(hasIO && !reduce){
+    var sio=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ sio.unobserve(en.target); countUp(en.target); } });
+    },{threshold:.6});
+    document.querySelectorAll('.stat b').forEach(function(el){ sio.observe(el); });
+  }
+
+  // Mobile call bar: hidden while the hero form is on screen
+  var bar=document.querySelector('.mbar'), hero=document.getElementById('analysis');
+  if(hasIO && bar && hero){
+    new IntersectionObserver(function(entries){
+      bar.classList.toggle('off', entries[0].isIntersecting);
+    },{threshold:0}).observe(hero);
+  } else if(bar){ bar.classList.remove('off'); }
+
+  // Forms. When deployed, set FORM_ENDPOINT to a form service URL
+  // (e.g. Formspree, Netlify Forms, or a CRM webhook) so submissions reach Shawn.
+  var FORM_ENDPOINT='';
+  function labelFor(input){
+    var l=document.querySelector('label[for="'+input.id+'"]');
+    return l ? l.childNodes[0].textContent.trim().toLowerCase().replace(/^your /,'') : 'details';
+  }
+  function clearError(field){
+    field.classList.remove('invalid');
+    var m=field.querySelector('.err'); if(m) m.remove();
+    var i=field.querySelector('input,select,textarea'); if(i){ i.removeAttribute('aria-invalid'); i.removeAttribute('aria-describedby'); }
+  }
+  function wire(formId,okId){
+    var form=document.getElementById(formId), ok=document.getElementById(okId);
+    form.querySelectorAll('[required]').forEach(function(i){
+      i.addEventListener('input',function(){ if(i.value.trim()) clearError(i.closest('.field')); });
+    });
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(form.company && form.company.value) return; // honeypot
+      form.querySelectorAll('.field.invalid').forEach(clearError);
+      var missing=[].slice.call(form.querySelectorAll('[required]')).filter(function(i){return !i.value.trim();});
+      if(missing.length){
+        missing.forEach(function(i){
+          var f=i.closest('.field'); void f.offsetWidth; f.classList.add('invalid');
+          var m=document.createElement('p'); m.className='err'; m.id=i.id+'-err'; m.textContent='Please add your '+labelFor(i)+'.';
+          f.appendChild(m); i.setAttribute('aria-invalid','true'); i.setAttribute('aria-describedby',m.id);
+        });
+        missing[0].focus(); return;
+      }
+      var btn=form.querySelector('button[type="submit"]');
+      btn.classList.add('loading'); btn.innerHTML='<span class="spin" aria-hidden="true"></span>Sending…';
+      var data=new FormData(form); data.append('form',formId);
+      var send=FORM_ENDPOINT ? fetch(FORM_ENDPOINT,{method:'POST',body:data,headers:{'Accept':'application/json'}}).catch(function(){}) : Promise.resolve();
+      var minWait=new Promise(function(r){ setTimeout(r, reduce?0:700); });
+      Promise.all([send,minWait]).then(function(){ form.hidden=true; ok.hidden=false; });
+      if(window.gtag) gtag('event','generate_lead',{form_id:formId});
+    });
+  }
+  wire('analysis-form','analysis-ok');
+  wire('contact-form','contact-ok');
+})();
+</script>
+</body>
+</html>
